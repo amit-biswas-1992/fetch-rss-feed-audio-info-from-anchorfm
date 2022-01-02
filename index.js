@@ -8,23 +8,47 @@ axios.get(link)
     var self = this; 
 
     parseString(response.data, function (err, result) {
-        let title = result.rss.channel[0].item[0].title[0];
-        let description = result.rss.channel[0].item[0].description[0];
-        let link = result.rss.channel[0].item[0].link[0];
-        let pubDate = result.rss.channel[0].item[0].pubDate[0];
-        let enclosure = result.rss.channel[0].item[0].enclosure[0];
-        let url = enclosure.$.url;
-        let length = enclosure.$.length;
-        let type = enclosure.$.type;
+        let items = result.rss.channel[0].item;
 
-+
-        console.log( "title :" +   title + "\n\n"
-        + "link :" + link + "\n\n"
-        + "pubDate :" + pubDate + "\n\n"
-        + "url :" + url + "\n\n"
-        + "length :" + length + "\n\n"
-        + "type :" + type + "\n\n"
-        );
+        //console.log(items)
+
+        let i = 0;
+
+        items.forEach( item => {
+          let title = item.title[0];
+          let description = item.description;
+          let link = item.link[0];
+          let pubDate = item.pubDate[0];
+          let enclosure = item.enclosure[0];
+          let url = enclosure.$.url;
+          let length = enclosure.$.length;
+          let type = enclosure.$.type;
+          let image = item.duration;
+          i++;
+          //console.log(item.image[0])
+          
+          if(i == 1){
+            console.log(items)
+            //get thumbnail
+            console.log(item.image[0])
+          }
+        // console.log( "title :" +   title + "\n\n"
+        // + "link :" + link + "\n\n"
+        // + "pubDate :" + pubDate + "\n\n"
+        // + "url :" + url + "\n\n"
+        // + "length :" + length + "\n\n"
+        // + "type :" + type + "\n\n"
+        // + "audioThumbnail :" + image + "\n\n"
+        // );
+
+        })
+
+        
+
+        
+
+
+        
        
        
 
