@@ -8,15 +8,23 @@ async function printPodcastTitle (url) {
     //get audios
     podcast.episodes.forEach( (episode) => {
 
-        console.log(episode.title)
+        console.log("titile: " + episode.title)
         //audio link
-        console.log(episode.enclosure.url)
+        console.log("link: " + episode.enclosure.url)
         //type
-        console.log(episode.enclosure.type)
+        console.log("type: " + episode.enclosure.type)
         //duration
-        console.log(episode.enclosure.length)
+        console.log("duration" + episode.enclosure.length)
         //get Image
-        console.log(episode.imageURL)
+        console.log("cover image: " + episode.imageURL)
+        
+        //get description
+        console.log("description: " + episode.description)
+        //get date
+        console.log("date: " + episode.pubDate)
+        
+        
+        console.log()
     })
 }
 
