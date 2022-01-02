@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 # fetch-rss-feed-audio-info-from-anchorfm
-=======
 # MESSAGE
->>>>>>> master
+
+npm i
+node index.js
