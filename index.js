@@ -23,23 +23,21 @@ axios.get(link)
           let url = enclosure.$.url;
           let length = enclosure.$.length;
           let type = enclosure.$.type;
-          let image = item.duration;
+          
+          let image = item["itunes:image"][0].$.href;
+
           i++;
           //console.log(item.image[0])
           
           if(i == 1){
-            console.log(items)
+
+            console.log(enclosure)
+            console.log('unique id' + item.guid[0]["_"])
             //get thumbnail
-            console.log(item.image[0])
+            console.log(type + '\n' + image)
+
           }
-        // console.log( "title :" +   title + "\n\n"
-        // + "link :" + link + "\n\n"
-        // + "pubDate :" + pubDate + "\n\n"
-        // + "url :" + url + "\n\n"
-        // + "length :" + length + "\n\n"
-        // + "type :" + type + "\n\n"
-        // + "audioThumbnail :" + image + "\n\n"
-        // );
+        
 
         })
 
